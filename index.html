@@ -39,6 +39,8 @@
     </nav>
 
     <section class="toolbar" aria-label="操作">
+      <button id="addItemBtn" class="primary" type="button">＋ 項目追加</button>
+      <button id="addCategoryBtn" type="button">＋ カテゴリ追加</button>
       <button id="expandAllBtn" type="button">すべて展開</button>
       <button id="collapseAllBtn" type="button">すべて閉じる</button>
       <button id="resetBtn" class="danger" type="button">チェックを全解除</button>
@@ -58,6 +60,40 @@
       <p>現在は端末ごとの保存です。友達と同じチェック状態を共有する機能は次の段階で追加できます。</p>
       <form method="dialog">
         <button type="submit">閉じる</button>
+      </form>
+    </div>
+  </dialog>
+
+
+  <dialog id="addItemDialog">
+    <div class="dialog-content">
+      <h2>項目を追加</h2>
+      <form id="addItemForm">
+        <label class="form-label" for="itemCategorySelect">追加先カテゴリ</label>
+        <select id="itemCategorySelect" required></select>
+
+        <label class="form-label" for="itemTextInput">項目名</label>
+        <input id="itemTextInput" type="text" maxlength="100" placeholder="例：eSIM（台湾用）" required>
+
+        <div class="dialog-actions">
+          <button type="button" class="secondary" data-close-dialog="addItemDialog">キャンセル</button>
+          <button type="submit">追加する</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog id="addCategoryDialog">
+    <div class="dialog-content">
+      <h2>カテゴリを追加</h2>
+      <form id="addCategoryForm">
+        <label class="form-label" for="categoryNameInput">カテゴリ名</label>
+        <input id="categoryNameInput" type="text" maxlength="60" placeholder="例：お土産・買い物" required>
+
+        <div class="dialog-actions">
+          <button type="button" class="secondary" data-close-dialog="addCategoryDialog">キャンセル</button>
+          <button type="submit">追加する</button>
+        </div>
       </form>
     </div>
   </dialog>
