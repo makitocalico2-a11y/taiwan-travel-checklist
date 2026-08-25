@@ -275,7 +275,7 @@ h1 {
   word-break: break-word;
 }
 
-.check-item.checked span {
+.check-item.checked .item-title {
   color: #9ca3af;
   text-decoration: line-through;
 }
@@ -441,6 +441,96 @@ dialog::backdrop {
   }
 
   .toolbar .danger {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Version 5: item descriptions + deletable default entries */
+.category-header-main {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  color: inherit;
+  flex: 1;
+}
+
+.check-item {
+  cursor: default;
+}
+
+.check-item-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.check-item-main input[type="checkbox"] {
+  width: 23px;
+  height: 23px;
+  margin: 0;
+  accent-color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.item-copy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.item-title {
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.item-description {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.check-item.checked .item-title {
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.check-item.checked .item-description {
+  color: #b0b6bf;
+  text-decoration: none;
+}
+
+.dialog-content textarea {
+  width: 100%;
+  min-height: 88px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 11px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  line-height: 1.5;
+}
+
+#restoreDeletedBtn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  #restoreDeletedBtn {
     grid-column: 1 / -1;
   }
 }
