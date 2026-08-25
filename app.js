@@ -1,6 +1,8 @@
 (() => {
   "use strict";
 
+  console.log("Taiwan checklist app v3 loaded");
+
   const STORAGE_KEY = "taiwan-travel-checklist-v2";
   const COLLAPSE_KEY = "taiwan-travel-checklist-collapse-v2";
   const TAB_KEY = "taiwan-travel-checklist-tab-v1";
